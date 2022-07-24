@@ -18,8 +18,8 @@ I'm using Fall 2020 edition of CS61A.
 
 ### Progress
 
-I hope to complete this course fastly, namely less than 1 week.
+I hope to complete this course quickly, namely less than 1 week.
 
-|Date   |Hw     |Lab    |Proj   |
-|:-:    |:-:    |:-:    |:-:    |
-|0725   |       |       |       |
+|Date   |Hw     |Lab    |Proj   |Time   |
+|:-:    |:-     |:-     |:-     |:-:    |
+|0724   |01     |00     |       |1.5h   |
