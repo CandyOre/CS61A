@@ -26,6 +26,7 @@ Notice: **DO NOT** look at other's code unless you've finished the problem.
 
 I hope to complete this course quickly, namely less than 1 week.
 
-|Date   |Hw     |Lab    |Proj   |Time   |
-|:-:    |:-     |:-     |:-     |:-:    |
-|0724   |01     |00     |       |1.5h   |
+|Date   |PPT    |Hw     |Lab    |Proj   |Time   |
+|:-:    |:-:    |:-:    |:-:    |:-:    |:-:    |
+|0724   |01-02  |01     |00     |       |1.5h   |
+|0725   |03-05  |       |01-02  |       |2.5h   |
