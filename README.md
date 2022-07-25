@@ -9,12 +9,18 @@ I'm here to take this course mainly for 2 reasons.
 1. Review Python 3 from a new angle.
 2. Complete SICP learning, which I gave up in last summer break.
 
-### Resource
+### Resources
 
 I'm using Fall 2020 edition of CS61A.
 
 - [Course Website](https://inst.eecs.berkeley.edu/~cs61a/fa20/)
 - [Online Textbook](http://composingprograms.com/)
+
+Other unofficial CS61A repo.
+
+Notice: **DO NOT** look at other's code unless you've finished the problem.
+
+- [FlyingPig](https://github.com/PKUFlyingPig/CS61A)
 
 ### Progress
 
