@@ -11,7 +11,7 @@ I'm here to take this course mainly for 2 reasons.
 
 ### Resources
 
-I'm using Fall 2020 edition of CS61A. Some detail of the materials in different semesters are not the same, but the cores of them are identical.
+I'm using Fall 2020 edition of CS61A. Some details of the materials in different semesters are not the same, but the cores of them are identical.
 
 - [Course Website](https://inst.eecs.berkeley.edu/~cs61a/fa20/)
 - [Online Textbook](http://composingprograms.com/)
