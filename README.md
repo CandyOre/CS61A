@@ -1,4 +1,4 @@
-# CS61A
+# CS61A: Structure and Interpretation of Computer Programs
 
 ### Description
 
@@ -31,3 +31,4 @@ I hope to complete this course quickly, namely less than 1 week.
 |0724   |01-02  |01     |00     |       |1.5h   |
 |0725   |03-05  |       |01-02  |       |2.5h   |
 |0726   |06-12  |02-03  |04     |hog    |5.5h   |
+|0727   |12-21  |04     |05-06  |       |5h     |
