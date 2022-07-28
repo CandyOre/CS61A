@@ -8,7 +8,13 @@ def convert_link(link):
     []
     """
     "*** YOUR CODE HERE ***"
-
+    result = []
+    while link is not Link.empty:
+        result += [link.first]
+        link = link.rest
+    return result
+    # An alternative solution using recursive
+    # return ([link.first] + convert_link(link.rest) if (link is not Link.empty) else [])
 
 def every_other(s):
     """Mutates a linked list so that all the odd-indiced elements are removed
@@ -28,6 +34,9 @@ def every_other(s):
     Link(4)
     """
     "*** YOUR CODE HERE ***"
+    while s is not Link.empty and s.rest is not Link.empty:
+        s.rest = s.rest.rest
+        s = s.rest
 
 
 def cumulative_mul(t):
@@ -40,6 +49,10 @@ def cumulative_mul(t):
     Tree(105, [Tree(15, [Tree(5)]), Tree(7)])
     """
     "*** YOUR CODE HERE ***"
+    from functools import reduce
+    if not t.is_leaf():
+        [cumulative_mul(b) for b in t.branches]
+        t.label = reduce(lambda x, y: x * y.label, t.branches, t.label)
 
 
 def has_cycle(link):
@@ -57,6 +70,13 @@ def has_cycle(link):
     False
     """
     "*** YOUR CODE HERE ***"
+    cache = []
+    while link is not Link.empty:
+        if link in cache:
+            return True
+        cache.append(link)
+        link = link.rest
+    return False
 
 def has_cycle_constant(link):
     """Return whether link contains a cycle.
@@ -70,6 +90,13 @@ def has_cycle_constant(link):
     False
     """
     "*** YOUR CODE HERE ***"
+    l, r = link, link
+    while l is not Link.empty and r is not Link.empty and r.rest is not Link.empty:
+        l = l.rest
+        r = r.rest.rest
+        if l is r:
+            return True
+    return False
 
 
 def reverse_other(t):
@@ -86,6 +113,13 @@ def reverse_other(t):
     Tree(1, [Tree(8, [Tree(3, [Tree(5), Tree(4)]), Tree(6, [Tree(7)])]), Tree(2)])
     """
     "*** YOUR CODE HERE ***"
+    if t.is_leaf():
+        return
+    else:
+        labels = reversed(list(map(lambda x: x.label, t.branches)))
+        for (b1, label) in zip(t.branches, labels):
+            b1.label = label
+            list(map(reverse_other, b1.branches))
 
 
 class Link:
