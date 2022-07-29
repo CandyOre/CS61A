@@ -17,6 +17,12 @@ def choose(paragraphs, select, k):
     """
     # BEGIN PROBLEM 1
     "*** YOUR CODE HERE ***"
+    for p in paragraphs:
+        if select(p):
+            k -= 1
+        if k < 0:
+            return p
+    return ''
     # END PROBLEM 1
 
 
@@ -33,6 +39,11 @@ def about(topic):
     assert all([lower(x) == x for x in topic]), 'topics should be lowercase.'
     # BEGIN PROBLEM 2
     "*** YOUR CODE HERE ***"
+    def contains(p):
+        p = remove_punctuation(p)
+        p = split(lower(p))
+        return any(t in p for t in topic)
+    return contains
     # END PROBLEM 2
 
 
@@ -57,6 +68,11 @@ def accuracy(typed, reference):
     reference_words = split(reference)
     # BEGIN PROBLEM 3
     "*** YOUR CODE HERE ***"
+    if not typed_words or not reference_words:
+        return 0.0
+    else:
+        return 100.0 * sum([1 if typed_words[i] == reference_words[i] else 0 \
+        for i in range(min(len(reference_words), len(typed_words)))]) / len(typed_words)
     # END PROBLEM 3
 
 
@@ -66,6 +82,7 @@ def wpm(typed, elapsed):
     # BEGIN PROBLEM 4
     "*** YOUR CODE HERE ***"
     # END PROBLEM 4
+    return 60 * len(typed) / 5 / elapsed
 
 
 def autocorrect(user_word, valid_words, diff_function, limit):
@@ -75,6 +92,14 @@ def autocorrect(user_word, valid_words, diff_function, limit):
     """
     # BEGIN PROBLEM 5
     "*** YOUR CODE HERE ***"
+    if user_word in valid_words:
+        return user_word
+    else:
+        candidate = min(valid_words, key = lambda x: diff_function(user_word, x, limit))
+        if diff_function(user_word, candidate, limit) > limit:
+            return user_word
+        else:
+            return candidate
     # END PROBLEM 5
 
 
@@ -84,31 +109,34 @@ def shifty_shifts(start, goal, limit):
     their lengths.
     """
     # BEGIN PROBLEM 6
-    assert False, 'Remove this line'
+    l1, l2 = len(start), len(goal)
+    def helper(i, cur):
+        if i >= min(l1, l2):
+            return cur
+        elif start[i] == goal[i]:
+            return helper(i + 1, cur)
+        else:
+            cur += 1
+            return (cur if cur > limit else helper(i + 1, cur))
+    return helper(0, abs(l1 - l2))
+
     # END PROBLEM 6
 
 
 def pawssible_patches(start, goal, limit):
     """A diff function that computes the edit distance from START to GOAL."""
-    assert False, 'Remove this line'
 
-    if ______________: # Fill in the condition
-        # BEGIN
-        "*** YOUR CODE HERE ***"
-        # END
+    if not start or not goal or limit < 0:
+        return abs(len(start) - len(goal))
 
-    elif ___________: # Feel free to remove or add additional cases
-        # BEGIN
-        "*** YOUR CODE HERE ***"
-        # END
+    elif start[0] == goal[0]:
+        return pawssible_patches(start[1:], goal[1:], limit)
 
     else:
-        add_diff = ... # Fill in these lines
-        remove_diff = ...
-        substitute_diff = ...
-        # BEGIN
-        "*** YOUR CODE HERE ***"
-        # END
+        add_diff = pawssible_patches(start, goal[1:], limit - 1)
+        remove_diff = pawssible_patches(start[1:], goal, limit - 1)
+        substitute_diff = pawssible_patches(start[1:], goal[1:], limit - 1)
+        return 1 + min(add_diff, remove_diff, substitute_diff)
 
 
 def final_diff(start, goal, limit):
@@ -125,6 +153,15 @@ def report_progress(typed, prompt, user_id, send):
     """Send a report of your id and progress so far to the multiplayer server."""
     # BEGIN PROBLEM 8
     "*** YOUR CODE HERE ***"
+    cnt = 0
+    for (w1, w2) in zip(typed, prompt):
+        if w1 == w2:
+            cnt += 1
+        else:
+            break
+    progress = cnt / len(prompt)
+    send({'id' : user_id, 'progress': progress})
+    return progress
     # END PROBLEM 8
 
 
@@ -151,6 +188,13 @@ def time_per_word(times_per_player, words):
     """
     # BEGIN PROBLEM 9
     "*** YOUR CODE HERE ***"
+    times = []
+    for t in times_per_player:
+        cur = []
+        for i in range(1, len(t)):
+            cur.append(t[i] - t[i - 1])
+        times.append(cur)
+    return game(words, times)
     # END PROBLEM 9
 
 
@@ -166,6 +210,11 @@ def fastest_words(game):
     word_indices = range(len(all_words(game)))    # contains an *index* for each word
     # BEGIN PROBLEM 10
     "*** YOUR CODE HERE ***"
+    list = [[] for _ in player_indices]
+    for i in word_indices:
+        p = min(player_indices, key = lambda x: time(game, x, i))
+        list[p].append(word_at(game, i))
+    return list
     # END PROBLEM 10
 
 
