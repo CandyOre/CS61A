@@ -13,8 +13,12 @@ I'm here to take this course mainly for 2 reasons.
 
 I'm using Fall 2020 edition of CS61A. Some details of the materials in different semesters are not the same, but the cores of them are identical.
 
-- [Course Website](https://inst.eecs.berkeley.edu/~cs61a/fa20/)
+- [[Fall 2020] Course Website](https://inst.eecs.berkeley.edu/~cs61a/fa20/)
 - [Online Textbook](http://composingprograms.com/)
+
+Upd: For the third project Ants, I refer to Spring 2022 version for a provided comprehensive GUI, which is not accessible in Fall 2020 version.
+
+- [[Spring 2022] Course Website](https://inst.eecs.berkeley.edu/~cs61a/sp22/)
 
 Other unofficial CS61A repo.
 
