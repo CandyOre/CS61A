@@ -18,6 +18,8 @@ I'm using Fall 2020 edition of CS61A. Some details of the materials in different
 
 Upd: For the third project Ants, I refer to Spring 2022 version for a provided comprehensive GUI, which is not accessible in Fall 2020 version.
 
+Upd: Project Ants in Spring 2022 is much harder than it in Fall 2020 QAQ!
+
 - [[Spring 2022] Course Website](https://inst.eecs.berkeley.edu/~cs61a/sp22/)
 
 Other unofficial CS61A repo.
@@ -37,3 +39,4 @@ I hope to complete this course quickly, namely less than 1 week.
 |0726   |06-12  |02-03  |04     |hog    |5.5h   |
 |0727   |12-21  |04     |05-06  |       |5h     |
 |0728   |22-24  |       |07-08  |cats   |4h     |
+|0729   |       |       |       |ants   |4h     |
