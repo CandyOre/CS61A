@@ -14,19 +14,16 @@ I'm here to take this course mainly for 2 reasons.
 I'm using Fall 2020 edition of CS61A. Some details of the materials in different semesters are not the same, but the cores of them are identical.
 
 - [[Fall 2020] Course Website](https://inst.eecs.berkeley.edu/~cs61a/fa20/)
+- [[Spring 2022] Course Website](https://inst.eecs.berkeley.edu/~cs61a/sp22/)
 - [Online Textbook](http://composingprograms.com/)
 
-Upd: For the third project Ants, I refer to Spring 2022 version for a provided comprehensive GUI, which is not accessible in Fall 2020 version.
+For the 3rd project Ants, I refer to Spring 2022 version for a provided comprehensive GUI, which is not accessible in Fall 2020 version. **Upd**: Project Ants in Spring 2022 is much harder than it in Fall 2020 **QAQ**!
 
-Upd: Project Ants in Spring 2022 is much harder than it in Fall 2020 QAQ!
+For the 4th project, where a scheme interpreter is created, I choose to complete the Challenge Version.
 
-- [[Spring 2022] Course Website](https://inst.eecs.berkeley.edu/~cs61a/sp22/)
+Other unofficial CS61A repo for reference. **Notice**: DO NOT look at other's code unless you've finished the problem.
 
-Other unofficial CS61A repo.
-
-- [FlyingPig](https://github.com/PKUFlyingPig/CS61A)
-
-Notice: **DO NOT** look at other's code unless you've finished the problem.
+- [[Summer 2020] FlyingPig](https://github.com/PKUFlyingPig/CS61A)
 
 ### Progress
 
