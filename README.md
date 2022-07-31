@@ -27,7 +27,7 @@ Other unofficial CS61A repo for reference. **Notice**: DO NOT look at other's co
 
 ### Progress
 
-I hope to complete this course quickly, namely less than 1 week.
+I hope to complete this course quickly, namely less than ~~1 week~~ 10 days.
 
 |Date   |PPT    |Hw     |Lab    |Proj   |Time   |
 |:-:    |:-:    |:-:    |:-:    |:-:    |:-:    |
@@ -37,3 +37,4 @@ I hope to complete this course quickly, namely less than 1 week.
 |0727   |12-21  |04     |05-06  |       |5h     |
 |0728   |22-24  |       |07-08  |cats   |4h     |
 |0729   |       |       |       |ants   |4h     |
+|0730   |27-30  |06-07  |10-11  |       |3h     |
