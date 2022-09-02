@@ -13,7 +13,13 @@
 ;; Returns a list of two-element lists
 (define (enumerate s)
   ; BEGIN PROBLEM 15
-  'replace-this-line
+  (define (helper s i)
+    (if (null? s)
+        nil
+        (cons
+          (cons i (cons (car s) nil))
+          (helper (cdr s) (+ i 1)))))
+  (helper s 0)
   )
   ; END PROBLEM 15
 
@@ -23,7 +29,13 @@
 ;; the merged lists.
 (define (merge comp list1 list2)
   ; BEGIN PROBLEM 16
-  'replace-this-line
+  (cond
+    ((null? list1) list2)
+    ((null? list2) list1)
+    (else
+      (if (comp (car list1) (car list2))
+        (cons (car list1) (merge comp (cdr list1) list2))
+        (cons (car list2) (merge comp list1 (cdr list2))))))
   )
   ; END PROBLEM 16
 
@@ -36,10 +48,23 @@
 ;; Problem 17
 
 (define (nondecreaselist s)
-    ; BEGIN PROBLEM 17
-    'replace-this-line
-    )
-    ; END PROBLEM 17
+  ; BEGIN PROBLEM 17
+  (define (helper s last)
+    (if (or (null? s) (< (car s) last))
+      (cons s nil)
+      (begin
+        (define other (helper (cdr s) (car s)))
+        (cons
+          (car other)
+          (cons (car s) (cdr other))))))
+  (if (null? s)
+    nil
+    (begin
+      (define get (helper s (car s)))
+      (cons
+        (cdr get)
+        (nondecreaselist (car get))))))
+  ; END PROBLEM 17
 
 ;; Problem EC
 ;; Returns a function that checks if an expression is the special form FORM

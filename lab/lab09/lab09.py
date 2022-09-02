@@ -7,7 +7,7 @@ def insert_into_all(item, nested_list):
     >>> insert_into_all(0, nl)
     [[0], [0, 1, 2], [0, 3]]
     """
-    return ______________________________
+    return list(map(lambda x: [item] + x, nested_list))
 
 def subseqs(s):
     """Assuming that S is a list, return a nested list of all subsequences
@@ -19,11 +19,11 @@ def subseqs(s):
     >>> subseqs([])
     [[]]
     """
-    if ________________:
-        ________________
+    if len(s) == 0:
+        return [[]]
     else:
-        ________________
-        ________________
+        other = subseqs(s[1:])
+        return other + insert_into_all(s[0], other)
 
 
 def inc_subseqs(s):
@@ -42,14 +42,14 @@ def inc_subseqs(s):
     """
     def subseq_helper(s, prev):
         if not s:
-            return ____________________
+            return [[]]
         elif s[0] < prev:
-            return ____________________
+            return subseq_helper(s[1:], prev)
         else:
-            a = ______________________
-            b = ______________________
-            return insert_into_all(________, ______________) + ________________
-    return subseq_helper(____, ____)
+            a = subseq_helper(s[1:], s[0])
+            b = subseq_helper(s[1:], prev)
+            return insert_into_all(s[0], a) + b
+    return subseq_helper(s, 0)
 
 
 def num_trees(n):
@@ -72,9 +72,9 @@ def num_trees(n):
     429
 
     """
-    if ____________________:
-        return _______________
-    return _______________
+    if n == 1:
+        return 1
+    return sum([num_trees(i) * num_trees(n - i) for i in range(1, n)])
 
 
 def make_generators_generator(g):
@@ -112,15 +112,15 @@ def make_generators_generator(g):
     9
     """
     def gen(i):
-        for ___________ in ___________:
-            if _________________________:
-                _________________________
-            _______________________
-            _______________________
-    __________________________
-    for _________ in __________________:
-        ______________________________
-        ______________________________
+        for x in g():
+            if i <= 0:
+                return
+            yield x
+            i -= 1
+    i = 1
+    for _ in g():
+        yield gen(i)
+        i += 1
 
 
 class Button:
@@ -159,26 +159,26 @@ class Keyboard:
     """
 
     def __init__(self, *args):
-        ________________
-        for _________ in ________________:
-            ________________
+        self.buttons = {}
+        for b in args:
+            self.buttons[b.pos] = b
 
     def press(self, info):
         """Takes in a position of the button pressed, and
         returns that button's output"""
-        if ____________________:
-            ________________
-            ________________
-            ________________
-        ________________
+        if info in self.buttons:
+            b = self.buttons[info]
+            b.times_pressed += 1
+            return b.key
+        return ''
 
     def typing(self, typing_input):
         """Takes in a list of positions of buttons pressed, and
         returns the total output"""
-        ________________
-        for ________ in ____________________:
-            ________________
-        ________________
+        str = ''
+        for info in typing_input:
+            str += self.press(info)
+        return str
 
 
 def make_advanced_counter_maker():
@@ -210,15 +210,25 @@ def make_advanced_counter_maker():
     >>> tom_counter('global-count')
     1
     """
-    ________________
-    def ____________(__________):
-        ________________
-        def ____________(__________):
-            ________________
+    global_count = 0
+    def make_counter():
+        count = 0
+        def counter(info):
+            nonlocal global_count, count
             "*** YOUR CODE HERE ***"
             # as many lines as you want
-        ________________
-    ________________
+            if info == 'count':
+                count += 1
+                return count
+            elif info == 'reset':
+                count = 0
+            elif info == 'global-count':
+                global_count += 1
+                return global_count
+            elif info == 'global-reset':
+                global_count = 0
+        return counter
+    return make_counter
 
 
 def trade(first, second):

@@ -118,6 +118,15 @@ def scheme_read(src):
         raise EOFError
     # BEGIN PROBLEM 1/2
     "*** YOUR CODE HERE ***"
+    x = src.pop_first()
+    if x == '(':
+        return read_tail(src)
+    elif x == ')':
+        raise SyntaxError('unexpected token \')\'')
+    elif x == 'nil':
+        return nil
+    else: # x is Number or Symbol or Boolean
+        return x
     # END PROBLEM 1/2
 
 def read_tail(src):
@@ -133,6 +142,11 @@ def read_tail(src):
             raise SyntaxError('unexpected end of file')
         # BEGIN PROBLEM 1
         "*** YOUR CODE HERE ***"
+        if src.current() == ')':
+            src.pop_first()
+            return nil
+        else:
+            return Pair(scheme_read(src), read_tail(src))
         # END PROBLEM 1
     except EOFError:
         raise SyntaxError('unexpected end of file')

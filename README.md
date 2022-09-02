@@ -33,7 +33,7 @@ I'm using Fall 2020 edition of CS61A. Some details of the materials in different
 - [[Spring 2022] Course Website](https://inst.eecs.berkeley.edu/~cs61a/sp22/)
 - [Online Textbook](http://composingprograms.com/)
 
-For the 3rd project Ants, I refer to Spring 2022 version for a provided comprehensive GUI, which is not accessible in Fall 2020 version. **Upd**: Project Ants in Spring 2022 is much harder than it in Fall 2020 **QAQ**!
+For the 3rd project Ants, I refer to the Spring 2022 version for a provided comprehensive GUI, which is not accessible in the Fall 2020 version. **Upd**: Project Ants in Spring 2022 is much harder than it in Fall 2020 **QAQ**!
 
 For the 4th project, where a scheme interpreter is created, I choose to complete the ~~Challenge Version~~ Normal Version. I'll leave the Challenge Version, which is quite hard to start from scratch in a few days, for the purpose of reviewing.
 
