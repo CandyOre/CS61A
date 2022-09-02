@@ -62,3 +62,4 @@ I hope to complete this course quickly, namely less than ~~1 week~~ 10 days.
 |0729   |       |       |       |ants   |4h     |
 |0730   |27-30  |06-07  |10-11  |       |3h     |
 |0731   |31-34  |       |12-13  |scheme |6.5h   |
+|0801   |35-37  |       |       |       |2h     |
